@@ -6,40 +6,134 @@
     <title>NGUYỄN NHẬT TIẾN - DỊCH VỤ MXH</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #0062ff; --bg: #f4f7fa; --sidebar: #ffffff; --text: #1e293b; --card: #ffffff; --border: #e2e8f0; }
-        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; height: 100vh; }
-        .sidebar { width: 260px; background: var(--sidebar); border-right: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; box-shadow: 2px 0 10px rgba(0,0,0,0.05); }
-        .brand { font-size: 20px; font-weight: 800; color: var(--primary); text-align: center; margin-bottom: 30px; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
-        .nav-link { padding: 12px; border-radius: 8px; color: #64748b; text-decoration: none; display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-weight: 500; transition: 0.3s; }
-        .nav-link.active { background: #e0ebff; color: var(--primary); }
-        .main { flex: 1; padding: 30px; overflow-y: auto; }
-        .card { background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 15px; max-width: 800px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        h2 { color: #0f172a; margin-top: 0; border-left: 5px solid var(--primary); padding-left: 15px; }
-        .form-group { margin-bottom: 18px; }
-        label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: #475569; text-transform: uppercase; }
-        select, input { width: 100%; padding: 12px; background: #ffffff; border: 2px solid #cbd5e1; color: #1e293b; border-radius: 8px; font-size: 15px; outline: none; box-sizing: border-box; }
-        select:focus, input:focus { border-color: var(--primary); }
-        .desc-info { background: #f8fafc; border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; margin: 15px 0; font-size: 14px; display: none; color: #334155; white-space: pre-line; }
-        .price-panel { background: #0062ff; color: white; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
-        .price-val { font-size: 26px; font-weight: 800; }
-        .btn-order { width: 100%; padding: 16px; background: #22c55e; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+        :root { --primary: #0062ff; --bg: #f4f7fa; --text: #1e293b; --card: #ffffff; --border: #e2e8f0; }
+        
+        /* Xóa sidebar, căn giữa toàn bộ nội dung */
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: flex-start; 
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .main { width: 100%; max-width: 600px; }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .brand-header h1 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card { 
+            background: var(--card); 
+            border: 1px solid var(--border); 
+            padding: 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+        }
+
+        h2 { 
+            color: #0f172a; 
+            margin-top: 0; 
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; }
+        
+        select, input { 
+            width: 100%; 
+            padding: 14px; 
+            background: #f8fafc; 
+            border: 2px solid #e2e8f0; 
+            color: #1e293b; 
+            border-radius: 12px; 
+            font-size: 15px; 
+            outline: none; 
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+        select:focus, input:focus { border-color: var(--primary); background: #fff; }
+
+        .desc-info { 
+            background: #eff6ff; 
+            border-left: 4px solid var(--primary); 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 15px 0; 
+            font-size: 14px; 
+            display: none; 
+            color: #1e40af; 
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .price-panel { 
+            background: var(--primary); 
+            color: white; 
+            padding: 20px; 
+            border-radius: 15px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-top: 25px; 
+        }
+        .price-val { font-size: 24px; font-weight: 800; }
+
+        .btn-order { 
+            width: 100%; 
+            padding: 18px; 
+            background: #22c55e; 
+            color: white; 
+            border: none; 
+            border-radius: 15px; 
+            font-size: 18px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+            transition: 0.3s;
+        }
+        .btn-order:active { transform: scale(0.98); }
+
+        .footer-contact {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
     </style>
 </head>
 <body>
 
-<div class="sidebar">
-    <div class="brand">NGUYỄN NHẬT TIẾN</div>
-    <a href="#" class="nav-link active"><i class="fa-solid fa-bolt"></i> Dịch Vụ Hot</a>
-    <a href="https://zalo.me/0966181924" target="_blank" class="nav-link"><i class="fa-solid fa-wallet"></i> Nạp Tiền (Zalo)</a>
-    <div style="margin-top:auto; font-size: 12px; color: #94a3b8; text-align: center;">Hỗ trợ Zalo: 0966181924</div>
-</div>
-
 <div class="main">
+    <div class="brand-header">
+        <h1>NGUYỄN NHẬT TIẾN</h1>
+    </div>
+
     <div class="card">
         <h2><i class="fa-brands fa-tiktok"></i> HỆ THỐNG DỊCH VỤ</h2>
         
         <div class="form-group">
-            <label>Nền tảng</label>
+            <label>1. Nền tảng</label>
             <select id="plt" onchange="loadCat()">
                 <option value="tt">TIKTOK (Mặc Định)</option>
                 <option value="fb">FACEBOOK</option>
@@ -49,33 +143,37 @@
         </div>
 
         <div class="form-group">
-            <label>Phân loại</label>
+            <label>2. Phân loại</label>
             <select id="cat" onchange="loadSvc()"></select>
         </div>
 
         <div class="form-group">
-            <label>Dịch vụ (Server)</label>
+            <label>3. Dịch vụ (Server)</label>
             <select id="svc" onchange="showSvc()"></select>
         </div>
 
         <div id="msg" class="desc-info"></div>
 
         <div class="form-group">
-            <label>Link bài viết / Profile</label>
-            <input type="text" id="link" placeholder="Dán link TikTok/FB vào đây...">
+            <label>4. Link bài viết / Profile</label>
+            <input type="text" id="link" placeholder="Dán link vào đây...">
         </div>
 
         <div class="form-group">
-            <label>Số lượng</label>
+            <label>5. Số lượng</label>
             <input type="number" id="qty" value="1000" oninput="calc()">
         </div>
 
         <div class="price-panel">
-            <span>TỔNG THANH TOÁN:</span>
+            <span>TỔNG TIỀN:</span>
             <div class="price-val"><span id="total">0</span> VNĐ</div>
         </div>
 
-        <button class="btn-order" onclick="pay()">XÁC NHẬN THANH TOÁN</button>
+        <button class="btn-order" onclick="pay()">THANH TOÁN QUA ZALO</button>
+    </div>
+
+    <div class="footer-contact">
+        Hỗ trợ kỹ thuật Zalo: <b>0966181924</b>
     </div>
 </div>
 
@@ -140,7 +238,7 @@ function showSvc() {
     if(svcS.value) {
         price = parseInt(svcS.value);
         m.style.display = 'block';
-        m.innerHTML = `<b>Mô tả:</b>\n${svcS.options[svcS.selectedIndex].dataset.d}`;
+        m.innerHTML = `<b>Mô tả Server:</b>\n${svcS.options[svcS.selectedIndex].dataset.d}`;
     } else { m.style.display = 'none'; price = 0; }
     calc();
 }
@@ -152,7 +250,7 @@ function calc() {
 
 function pay() {
     const link = document.getElementById('link').value;
-    if(!link) return alert("Vui lòng nhập link!");
+    if(!link) return alert("Anh Tiến ơi, vui lòng nhập link đơn hàng!");
     const msg = `ĐƠN HÀNG MỚI:\n- Dịch vụ: ${svcS.options[svcS.selectedIndex].dataset.n}\n- Link: ${link}\n- Số lượng: ${document.getElementById('qty').value}\n- Tổng: ${document.getElementById('total').innerText} VNĐ`;
     window.open(`https://zalo.me/0966181924?text=${encodeURIComponent(msg)}`);
 }
