@@ -8,7 +8,6 @@
     <style>
         :root { --primary: #0062ff; --bg: #f4f7fa; --text: #1e293b; --card: #ffffff; --border: #e2e8f0; }
         
-        /* Xóa sidebar, căn giữa toàn bộ nội dung */
         body { 
             background: var(--bg); 
             color: var(--text); 
@@ -186,10 +185,10 @@ const DB = {
         ]},
         t2: { n: "Follow Tây giá rẻ", svs: [
             {n: "TikTok Followers | LQ Profile | Max 10M | Nhanh🔥", p: 18906, d: "Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."},
-            {n: "TikTok Followers | 100% Real Users | Hoạt Động", p: 21799, d: Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."}
+            {n: "TikTok Followers | 100% Real Users | Hoạt Động", p: 21799, d: "Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."}
         ]},
         t3: { n: "Follow Tây chất lượng cao", svs: [
-            {n: "TikTok Followers | Max 1M | Bảo Hành♻️ | Hiếm Tụt 🔥", p: 38577, d: Liên Kết : Bảo hành 7 ngày.\nUsername Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."},
+            {n: "TikTok Followers | Max 1M | Bảo Hành♻️ | Hiếm Tụt 🔥", p: 38577, d: "Liên Kết : Bảo hành 7 ngày.\nUsername Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."},
             {n: "TikTok Followers | Real Active Accounts | Ít Tụt🔥", p: 35688, d: "Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."}
         ]},
         t4: { n: "View TikTok", svs: [{n: "View Cực Rẻ", p: 100, d: "Min 1000 view."}]}
@@ -214,17 +213,19 @@ window.onload = function() { loadCat(); };
 function loadCat() {
     catS.innerHTML = '';
     const selectedPlt = pltS.value;
-    for(let k in DB[selectedPlt].cats) {
-        catS.innerHTML += `<option value="${k}">${DB[selectedPlt].cats[k].n}</option>`;
+    if(DB[selectedPlt]) {
+        for(let k in DB[selectedPlt].cats) {
+            catS.innerHTML += `<option value="${k}">${DB[selectedPlt].cats[k].n}</option>`;
+        }
+        loadSvc();
     }
-    loadSvc();
 }
 
 function loadSvc() {
     svcS.innerHTML = '';
     const selectedPlt = pltS.value;
     const selectedCat = catS.value;
-    if(selectedCat) {
+    if(selectedCat && DB[selectedPlt].cats[selectedCat]) {
         DB[selectedPlt].cats[selectedCat].svs.forEach(s => {
             let p20 = Math.round(s.p * 1.2);
             svcS.innerHTML += `<option value="${p20}" data-d="${s.d}" data-n="${s.n}">${s.n} [${p20}đ]</option>`;
