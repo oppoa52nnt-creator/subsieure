@@ -48,7 +48,7 @@
         <div class="form-group">
             <label>Nền tảng</label>
             <select id="plt" onchange="loadCat()">
-                <option value="tt">TIKTOK (Mặc định)</option>
+                <option value="tt">TIKTOK</option>
                 <option value="fb">FACEBOOK</option>
                 <option value="yt">YOUTUBE</option>
                 <option value="tl">TELEGRAM</option>
@@ -82,15 +82,42 @@
             <div class="price-val"><span id="total">0</span> VNĐ</div>
         </div>
 
-        <button class="btn-order" onclick="pay()">MUA NGAY QUA ZALO</button>
+        <button class="btn-order" onclick="pay()">Xác Nhận Thanh Toán</button>
     </div>
 </div>
 
 <script>
 const DB = {
     tt: { n: "TikTok", cats: {
-        t1: { n: "Follow TikTok", svs: [{n: "Follow Việt (Bao Tụt)", p: 18000, d: "Bảo hành 30 ngày."}, {n: "Follow Global (Giá Rẻ)", p: 9000, d: "Lên cực nhanh."}]},
-        t2: { n: "Tim (Like) TikTok", svs: [{n: "Tim Video Việt", p: 3500, d: "Tăng đề xuất."}, {n: "Tim Speed", p: 2000, d: "Dùng để buff số lượng."}]},
+        t1: { n: "Follow Việt Nam", svs: [{n: "  TikTok Follows | Việt Nam🇻🇳 | Bấm Tay | 1000/24h🔥", p: 12560, d: "Liên Kết : Username Hoặc Link Profile/
+⚠️Kiểm tra định dạng Link cẩn thận trước khi đặt hàng.
+
+⚠️Vui lòng đảm bảo tài khoản của bạn ở chế độ công khai, Không riêng tư."}, {n: " TikTok Follower | Việt Nam 🇻🇳 | Chất Lượng Tốt | 2000/24h | Khuyên Dùng | Tụt Ít🔥 | Đang Ổn", p: 21778, d: "Liên Kết : Username Hoặc Link Profile/
+⚠️Kiểm tra định dạng Link cẩn thận trước khi đặt hàng.
+
+⚠️Vui lòng đảm bảo tài khoản của bạn ở chế độ công khai, Không riêng tư."}]},
+        t2: { n: "Follow Tây giá rẻ", svs: [{n: "TikTok Followers | LQ Profile | Max 10M | 100K/Ngày ~ Nhanh🔥", p: 18906, d: "Liên Kết : Username Hoặc Link Profile/
+⚠️Kiểm tra định dạng Link cẩn thận trước khi đặt hàng.
+
+⚠️Vui lòng đảm bảo tài khoản của bạn ở chế độ công khai, Không riêng tư."}, {n: "TikTok Followers | Max 1M | 100% Real Users | 50K/Ngày - Hoạt Động", p: 21799, d: "Dùng để buff số lượng."}, {n: "svs: [{n: "TikTok Followers | Max 1M | Chất Lượng Cao | Bảo Hành♻️ | Hiếm Tụt 🔥
+
+", p: 18906, d: "Liên Kết : Username Hoặc Link Profile/
+⚠️Kiểm tra định dạng Link cẩn thận trước khi đặt hàng.
+
+⚠️Vui lòng đảm bảo tài khoản của bạn ở chế độ công khai, Không riêng tư."}]},
+         t3: { n: "Follow Tây chất lượng cao", svs: [{n: "TikTok Followers | Max 1M | Chất Lượng Cao | Bảo Hành♻️ | Hiếm Tụt 🔥
+
+",p: 38577, d: "Liên Kết : Username Hoặc Link Profile/
+⚠️Kiểm tra định dạng Link cẩn thận trước khi đặt hàng.
+
+⚠️Vui lòng đảm bảo tài khoản của bạn ở chế độ công khai, Không riêng tư."}, {n: "5758
+
+ TikTok Followers | Max 1M | 100% Real Active Accounts | 30k/Days | Ít Tụt🔥
+
+", p: 35688, d: "Liên Kết : Username Hoặc Link Profile/
+⚠️Kiểm tra định dạng Link cẩn thận trước khi đặt hàng.
+
+⚠️Vui lòng đảm bảo tài khoản của bạn ở chế độ công khai, Không riêng tư."}]},
         t3: { n: "View TikTok", svs: [{n: "View Cực Rẻ", p: 100, d: "Min 1000 view."}]}
     }},
     fb: { n: "Facebook", cats: {
