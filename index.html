@@ -3,155 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGUYỄN NHẬT TIẾN - DỊCH VỤ MXH</title>
+    <title>NGUYỄN NHẬT TIẾN - DỊCH VỤ TIKTOK & MXH</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { 
-            --primary: #0062ff; /* Xanh dương chủ đạo */
+            --primary: #0062ff; 
             --bg: #f4f7fa; 
             --sidebar: #ffffff; 
             --text: #1e293b;
             --card: #ffffff; 
             --border: #e2e8f0; 
         }
-        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; display: flex; height: 100vh; }
-        
-        /* Sidebar Trắng Xanh */
+        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; height: 100vh; }
         .sidebar { width: 260px; background: var(--sidebar); border-right: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; box-shadow: 2px 0 10px rgba(0,0,0,0.05); }
         .brand { font-size: 20px; font-weight: 800; color: var(--primary); text-align: center; margin-bottom: 30px; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
         .nav-link { padding: 12px; border-radius: 8px; color: #64748b; text-decoration: none; display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-weight: 500; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { background: #e0ebff; color: var(--primary); }
-
+        .nav-link.active { background: #e0ebff; color: var(--primary); }
         .main { flex: 1; padding: 30px; overflow-y: auto; }
         .card { background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 15px; max-width: 800px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        
         h2 { color: #0f172a; margin-top: 0; border-left: 5px solid var(--primary); padding-left: 15px; }
-
         .form-group { margin-bottom: 18px; }
         label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: #475569; text-transform: uppercase; }
-        
-        select, input { 
-            width: 100%; padding: 12px; background: #ffffff; border: 2px solid #cbd5e1; color: #1e293b; 
-            border-radius: 8px; font-size: 15px; outline: none; box-sizing: border-box; transition: 0.3s;
-        }
-        select:focus, input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,98,255,0.1); }
-
-        .desc-info { background: #f8fafc; border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; margin: 15px 0; font-size: 14px; display: none; line-height: 1.5; color: #334155; }
-        
-        .price-panel { 
-            background: #0062ff; color: white; padding: 20px; border-radius: 12px; 
-            display: flex; justify-content: space-between; align-items: center; margin-top: 25px;
-        }
+        select, input { width: 100%; padding: 12px; background: #ffffff; border: 2px solid #cbd5e1; color: #1e293b; border-radius: 8px; font-size: 15px; outline: none; box-sizing: border-box; }
+        select:focus, input:focus { border-color: var(--primary); }
+        .desc-info { background: #f8fafc; border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; margin: 15px 0; font-size: 14px; display: none; color: #334155; }
+        .price-panel { background: #0062ff; color: white; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
         .price-val { font-size: 26px; font-weight: 800; }
-
-        .btn-order { 
-            width: 100%; padding: 16px; background: #22c55e; color: white; border: none; 
-            border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; 
-            margin-top: 20px; transition: 0.3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-        .btn-order:hover { background: #16a34a; transform: translateY(-2px); }
+        .btn-order { width: 100%; padding: 16px; background: #22c55e; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; }
     </style>
 </head>
 <body>
 
 <div class="sidebar">
     <div class="brand">NGUYỄN NHẬT TIẾN</div>
-    <a href="#" class="nav-link active"><i class="fa-solid fa-cart-plus"></i> Mua Dịch Vụ</a>
-    <a href="https://zalo.me/0966181924" target="_blank" class="nav-link"><i class="fa-solid fa-wallet"></i> Nạp Tiền (Zalo)</a>
-    <a href="#" class="nav-link"><i class="fa-solid fa-clock-rotate-left"></i> Lịch Sử Đơn</a>
-    <div style="margin-top:auto">
-        <div style="font-size: 12px; color: #94a3b8; text-align: center;">Hỗ trợ 24/7 qua Zalo</div>
-    </div>
+    <a href="#" class="nav-link active"><i class="fa-solid fa-bolt"></i> Dịch Vụ Hot</a>
+    <a href="https://zalo.me/0966181924" target="_blank" class="nav-link"><i class="fa-solid fa-wallet"></i> Nạp Tiền</a>
+    <div style="margin-top:auto; font-size: 12px; color: #94a3b8; text-align: center;">Hỗ trợ Zalo: 0966181924</div>
 </div>
 
 <div class="main">
     <div class="card">
-        <h2><i class="fa-solid fa-rocket"></i> HỆ THỐNG DỊCH VỤ SMM</h2>
+        <h2><i class="fa-brands fa-tiktok"></i> HỆ THỐNG DỊCH VỤ</h2>
         
         <div class="form-group">
-            <label>Nền tảng (Platform)</label>
+            <label>Nền tảng</label>
             <select id="plt" onchange="loadCat()">
-                <option value="">-- Chọn Mạng Xã Hội --</option>
+                <option value="tt">TIKTOK (Mặc định)</option>
                 <option value="fb">FACEBOOK</option>
-                <option value="tt">TIKTOK</option>
                 <option value="yt">YOUTUBE</option>
-                <option value="ig">INSTAGRAM</option>
                 <option value="tl">TELEGRAM</option>
-                <option value="gm">GOOGLE MAPS</option>
-                <option value="sh">SHOPEE</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label>Phân loại (Category)</label>
-            <select id="cat" onchange="loadSvc()" disabled><option value="">-- Chọn Phân Loại --</option></select>
+            <label>Phân loại</label>
+            <select id="cat" onchange="loadSvc()"></select>
         </div>
 
         <div class="form-group">
-            <label>Máy chủ (Server) - Giá +20%</label>
-            <select id="svc" onchange="showSvc()" disabled><option value="">-- Chọn Server --</option></select>
+            <label>Dịch vụ (Server)</label>
+            <select id="svc" onchange="showSvc()"></select>
         </div>
 
         <div id="msg" class="desc-info"></div>
 
         <div class="form-group">
             <label>Link bài viết / Profile</label>
-            <input type="text" id="link" placeholder="Nhập ID hoặc Link đơn hàng">
+            <input type="text" id="link" placeholder="Dán link TikTok/FB vào đây...">
         </div>
 
         <div class="form-group">
-            <label>Số lượng cần mua</label>
+            <label>Số lượng</label>
             <input type="number" id="qty" value="1000" oninput="calc()">
         </div>
 
         <div class="price-panel">
-            <span>TỔNG TIỀN:</span>
+            <span>TỔNG THANH TOÁN:</span>
             <div class="price-val"><span id="total">0</span> VNĐ</div>
         </div>
 
-        <button class="btn-order" onclick="pay()">GỬI ĐƠN HÀNG NGAY</button>
+        <button class="btn-order" onclick="pay()">MUA NGAY QUA ZALO</button>
     </div>
 </div>
 
 <script>
 const DB = {
-    fb: { n: "Facebook", cats: {
-        f1: { n: "Like Bài Viết", svs: [{n: "Like Việt Tốc Độ", p: 800, d: "Lên ngay sau 5p."}, {n: "Like Tây Giá Rẻ", p: 400, d: "Dùng để buff số lượng."}]},
-        f2: { n: "Theo dõi (Sub Profile)", svs: [{n: "Sub VIP Bao Tụt", p: 3500, d: "Bảo hành 30 ngày."}, {n: "Sub Thật Nick Cổ", p: 5500, d: "Rất an toàn cho nick."}]},
-        f3: { n: "Thành viên Nhóm", svs: [{n: "Mem Nhóm Công Khai", p: 6000, d: "Tăng uy tín Group."}]},
-        f4: { n: "Mắt Livestream", svs: [{n: "Mắt Duy Trì 30p", p: 15000, d: "Duy trì ổn định."}]}
-    }},
     tt: { n: "TikTok", cats: {
-        t1: { n: "Follow TikTok", svs: [{n: "Follow Việt (Xịn)", p: 18000, d: "Acc thật, hỗ trợ bật Live."}, {n: "Follow Global", p: 9000, d: "Tốc độ cực nhanh."}]},
-        t2: { n: "Tim (Like) TikTok", svs: [{n: "Tim Lên Đều", p: 3500, d: "An toàn cho kênh."}, {n: "Tim Speed", p: 2000, d: "Lên nhanh số lượng lớn."}]},
-        t3: { n: "View TikTok", svs: [{n: "View Triệu Lượt", p: 100, d: "Cực rẻ để kéo đề xuất."}]}
+        t1: { n: "Follow TikTok", svs: [{n: "Follow Việt (Bao Tụt)", p: 18000, d: "Bảo hành 30 ngày."}, {n: "Follow Global (Giá Rẻ)", p: 9000, d: "Lên cực nhanh."}]},
+        t2: { n: "Tim (Like) TikTok", svs: [{n: "Tim Video Việt", p: 3500, d: "Tăng đề xuất."}, {n: "Tim Speed", p: 2000, d: "Dùng để buff số lượng."}]},
+        t3: { n: "View TikTok", svs: [{n: "View Cực Rẻ", p: 100, d: "Min 1000 view."}]}
+    }},
+    fb: { n: "Facebook", cats: {
+        f1: { n: "Like Bài Viết", svs: [{n: "Like Việt Speed", p: 800, d: "Lên ngay."}, {n: "Like Tây", p: 400, d: "Giá rẻ."}]},
+        f2: { n: "Sub Profile", svs: [{n: "Sub VIP", p: 3500, d: "Chất lượng cao."}]}
     }},
     yt: { n: "YouTube", cats: {
-        y1: { n: "Sub YouTube", svs: [{n: "Sub Chất Lượng", p: 55000, d: "Bảo hành vĩnh viễn."}]},
-        y2: { n: "View YouTube", svs: [{n: "View SEO Top", p: 45000, d: "Nguồn thật ổn định."}]}
+        y1: { n: "Sub YouTube", svs: [{n: "Sub Thật", p: 55000, d: "An toàn cho kênh."}]}
     }},
-    gm: { n: "Google Maps", cats: {
-        g1: { n: "Đánh giá 5 Sao", svs: [{n: "Review Local Guide", p: 45000, d: "Tăng uy tín địa điểm."}]}
+    tl: { n: "Telegram", cats: {
+        l1: { n: "Member Group", svs: [{n: "Mem Global", p: 7500, d: "Tăng số lượng nhanh."}]}
     }}
 };
 
 let price = 0;
 const pltS = document.getElementById('plt'), catS = document.getElementById('cat'), svcS = document.getElementById('svc');
 
+// Hàm khởi tạo khi load trang
+window.onload = function() {
+    loadCat();
+};
+
 function loadCat() {
-    catS.innerHTML = '<option value="">-- Chọn Phân Loại --</option>';
-    catS.disabled = !pltS.value;
-    if(pltS.value) for(let k in DB[pltS.value].cats) catS.innerHTML += `<option value="${k}">${DB[pltS.value].cats[k].n}</option>`;
+    catS.innerHTML = '';
+    const selectedPlt = pltS.value;
+    for(let k in DB[selectedPlt].cats) {
+        catS.innerHTML += `<option value="${k}">${DB[selectedPlt].cats[k].n}</option>`;
+    }
     loadSvc();
 }
 
 function loadSvc() {
-    svcS.innerHTML = '<option value="">-- Chọn Server --</option>';
-    svcS.disabled = !catS.value;
-    if(catS.value) {
-        DB[pltS.value].cats[catS.value].svs.forEach(s => {
+    svcS.innerHTML = '';
+    const selectedPlt = pltS.value;
+    const selectedCat = catS.value;
+    if(selectedCat) {
+        DB[selectedPlt].cats[selectedCat].svs.forEach(s => {
             let p20 = Math.round(s.p * 1.2);
-            svcS.innerHTML += `<option value="${p20}" data-d="${s.d}" data-n="${s.n}">${s.n} - [${p20}đ]</option>`;
+            svcS.innerHTML += `<option value="${p20}" data-d="${s.d}" data-n="${s.n}">${s.n} [${p20}đ]</option>`;
         });
     }
     showSvc();
@@ -162,7 +140,7 @@ function showSvc() {
     if(svcS.value) {
         price = parseInt(svcS.value);
         m.style.display = 'block';
-        m.innerHTML = `<b>Thông tin:</b> ${svcS.options[svcS.selectedIndex].dataset.d}`;
+        m.innerHTML = `<b>Mô tả:</b> ${svcS.options[svcS.selectedIndex].dataset.d}`;
     } else { m.style.display = 'none'; price = 0; }
     calc();
 }
@@ -173,8 +151,8 @@ function calc() {
 
 function pay() {
     const link = document.getElementById('link').value;
-    if(!link) return alert("Anh Tiến ơi, chưa nhập link!");
-    const msg = `ĐƠN HÀNG MỚI:\n- Dịch vụ: ${svcS.options[svcS.selectedIndex].dataset.n}\n- Link: ${link}\n- Tổng tiền: ${document.getElementById('total').innerText} VNĐ`;
+    if(!link) return alert("Vui lòng nhập link!");
+    const msg = `ĐƠN HÀNG MỚI:\n- Dịch vụ: ${svcS.options[svcS.selectedIndex].dataset.n}\n- Link: ${link}\n- Tổng: ${document.getElementById('total').innerText} VNĐ`;
     window.open(`https://zalo.me/0966181924?text=${encodeURIComponent(msg)}`);
 }
 </script>
