@@ -1,208 +1,180 @@
-
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>NGUYỄN NHẬT TIẾN - HỆ THỐNG DỊCH VỤ TỔNG HỢP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGUYỄN NHẬT TIẾN - DỊCH VỤ MXH</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #a855f7; --bg: #020617; --sidebar: #0f172a; --card: rgba(255, 255, 255, 0.05); --border: rgba(255, 255, 255, 0.1); }
-        body { background: var(--bg); color: #f1f5f9; font-family: 'Inter', sans-serif; margin: 0; display: flex; height: 100vh; }
-        .sidebar { width: 260px; background: var(--sidebar); border-right: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; }
-        .brand { font-size: 20px; font-weight: 800; color: var(--primary); text-align: center; margin-bottom: 30px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
-        .nav-link { padding: 12px; border-radius: 10px; color: #94a3b8; text-decoration: none; display: flex; align-items: center; gap: 10px; margin-bottom: 5px; transition: 0.3s; }
-        .nav-link.active { background: var(--primary); color: white; }
-        .main { flex: 1; padding: 40px; overflow-y: auto; }
-        .card { background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 20px; max-width: 900px; margin: 0 auto; backdrop-filter: blur(10px); }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 600; color: #a855f7; text-transform: uppercase; }
-        select, input { width: 100%; padding: 14px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 10px; font-size: 15px; }
-        .price-box { background: rgba(74, 222, 128, 0.1); border: 1px solid #4ade80; padding: 20px; border-radius: 15px; margin-top: 25px; display: flex; justify-content: space-between; align-items: center; }
-        .price-val { font-size: 28px; font-weight: 800; color: #4ade80; }
-        .btn-buy { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.4); }
-        .desc { background: #1e293b; padding: 15px; border-radius: 10px; margin-top: 10px; font-size: 13px; border-left: 4px solid var(--primary); display: none; }
+        :root { 
+            --primary: #0062ff; /* Xanh dương chủ đạo */
+            --bg: #f4f7fa; 
+            --sidebar: #ffffff; 
+            --text: #1e293b;
+            --card: #ffffff; 
+            --border: #e2e8f0; 
+        }
+        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; display: flex; height: 100vh; }
+        
+        /* Sidebar Trắng Xanh */
+        .sidebar { width: 260px; background: var(--sidebar); border-right: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; box-shadow: 2px 0 10px rgba(0,0,0,0.05); }
+        .brand { font-size: 20px; font-weight: 800; color: var(--primary); text-align: center; margin-bottom: 30px; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        .nav-link { padding: 12px; border-radius: 8px; color: #64748b; text-decoration: none; display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-weight: 500; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { background: #e0ebff; color: var(--primary); }
+
+        .main { flex: 1; padding: 30px; overflow-y: auto; }
+        .card { background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 15px; max-width: 800px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        
+        h2 { color: #0f172a; margin-top: 0; border-left: 5px solid var(--primary); padding-left: 15px; }
+
+        .form-group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: #475569; text-transform: uppercase; }
+        
+        select, input { 
+            width: 100%; padding: 12px; background: #ffffff; border: 2px solid #cbd5e1; color: #1e293b; 
+            border-radius: 8px; font-size: 15px; outline: none; box-sizing: border-box; transition: 0.3s;
+        }
+        select:focus, input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,98,255,0.1); }
+
+        .desc-info { background: #f8fafc; border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; margin: 15px 0; font-size: 14px; display: none; line-height: 1.5; color: #334155; }
+        
+        .price-panel { 
+            background: #0062ff; color: white; padding: 20px; border-radius: 12px; 
+            display: flex; justify-content: space-between; align-items: center; margin-top: 25px;
+        }
+        .price-val { font-size: 26px; font-weight: 800; }
+
+        .btn-order { 
+            width: 100%; padding: 16px; background: #22c55e; color: white; border: none; 
+            border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; 
+            margin-top: 20px; transition: 0.3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .btn-order:hover { background: #16a34a; transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
 <div class="sidebar">
     <div class="brand">NGUYỄN NHẬT TIẾN</div>
-    <a href="#" class="nav-link active"><i class="fa-solid fa-plus-circle"></i> Tạo đơn mới</a>
-    <a href="#" class="nav-link"><i class="fa-solid fa-wallet"></i> Nạp tiền (Auto)</a>
-    <a href="#" class="nav-link"><i class="fa-solid fa-history"></i> Lịch sử đơn</a>
-    <div style="margin-top:auto"><a href="https://zalo.me/0966181924" class="nav-item" style="color:#4ade80; text-decoration:none"><i class="fa-solid fa-headset"></i> Hỗ trợ Zalo</a></div>
+    <a href="#" class="nav-link active"><i class="fa-solid fa-cart-plus"></i> Mua Dịch Vụ</a>
+    <a href="https://zalo.me/0966181924" target="_blank" class="nav-link"><i class="fa-solid fa-wallet"></i> Nạp Tiền (Zalo)</a>
+    <a href="#" class="nav-link"><i class="fa-solid fa-clock-rotate-left"></i> Lịch Sử Đơn</a>
+    <div style="margin-top:auto">
+        <div style="font-size: 12px; color: #94a3b8; text-align: center;">Hỗ trợ 24/7 qua Zalo</div>
+    </div>
 </div>
 
 <div class="main">
     <div class="card">
-        <h2 style="margin-top:0"><i class="fa-solid fa-bolt"></i> MUA DỊCH VỤ TỔNG HỢP</h2>
+        <h2><i class="fa-solid fa-rocket"></i> HỆ THỐNG DỊCH VỤ SMM</h2>
         
         <div class="form-group">
-            <label>1. Nền tảng</label>
-            <select id="plt" onchange="chgPlt()"><option value="">-- Chọn --</option></select>
+            <label>Nền tảng (Platform)</label>
+            <select id="plt" onchange="loadCat()">
+                <option value="">-- Chọn Mạng Xã Hội --</option>
+                <option value="fb">FACEBOOK</option>
+                <option value="tt">TIKTOK</option>
+                <option value="yt">YOUTUBE</option>
+                <option value="ig">INSTAGRAM</option>
+                <option value="tl">TELEGRAM</option>
+                <option value="gm">GOOGLE MAPS</option>
+                <option value="sh">SHOPEE</option>
+            </select>
         </div>
 
         <div class="form-group">
-            <label>2. Phân loại</label>
-            <select id="cat" onchange="chgCat()" disabled><option value="">-- Chọn --</option></select>
+            <label>Phân loại (Category)</label>
+            <select id="cat" onchange="loadSvc()" disabled><option value="">-- Chọn Phân Loại --</option></select>
         </div>
 
         <div class="form-group">
-            <label>3. Dịch vụ (Giá +20%)</label>
-            <select id="svc" onchange="chgSvc()" disabled><option value="">-- Chọn --</option></select>
+            <label>Máy chủ (Server) - Giá +20%</label>
+            <select id="svc" onchange="showSvc()" disabled><option value="">-- Chọn Server --</option></select>
         </div>
 
-        <div id="svc_desc" class="desc"></div>
+        <div id="msg" class="desc-info"></div>
 
-        <div class="form-group" style="margin-top:20px;">
+        <div class="form-group">
             <label>Link bài viết / Profile</label>
-            <input type="text" id="link" placeholder="Dán link vào đây...">
+            <input type="text" id="link" placeholder="Nhập ID hoặc Link đơn hàng">
         </div>
 
         <div class="form-group">
-            <label>Số lượng</label>
+            <label>Số lượng cần mua</label>
             <input type="number" id="qty" value="1000" oninput="calc()">
         </div>
 
-        <div class="price-box">
-            <span>TỔNG THANH TOÁN:</span>
+        <div class="price-panel">
+            <span>TỔNG TIỀN:</span>
             <div class="price-val"><span id="total">0</span> VNĐ</div>
         </div>
 
-        <button class="btn-buy" onclick="order()">XÁC NHẬN THANH TOÁN</button>
+        <button class="btn-order" onclick="pay()">GỬI ĐƠN HÀNG NGAY</button>
     </div>
 </div>
 
 <script>
-// DATABASE CỰC ĐẠI - ANH TIẾN CÓ THỂ TỰ THÊM DÒNG NẾU MUỐN
 const DB = {
-    fb: { n: "FACEBOOK", cats: {
-        f1: { n: "Like Bài Viết (Speed/Sale)", svs: [
-            {n: "Like Việt SV1 (Lên nhanh)", p: 800, d: "Bảo hành 7 ngày. Max 50k."},
-            {n: "Like Tây SV2 (Giá rẻ)", p: 400, d: "Không bảo hành. Lên ngay."},
-            {n: "Cảm xúc (Love, Haha, Wow) SV3", p: 1200, d: "Nick thật hoạt động."}
-        ]},
-        f2: { n: "Theo dõi (Sub Profile)", svs: [
-            {n: "Sub VIP SV1 (Bao tụt)", p: 3500, d: "Bảo hành 30 ngày. Nick có avatar."},
-            {n: "Sub Rẻ SV5", p: 1500, d: "Tốc độ cực nhanh. Phù hợp buff số."},
-            {n: "Sub Nick Cổ (Cực chất)", p: 5500, d: "Người dùng thật, độ tin cậy cao."}
-        ]},
-        f3: { n: "Thành viên Nhóm (Group)", svs: [
-            {n: "Mem Công Khai SV1", p: 6000, d: "Duyệt nhanh. Nick Việt."},
-            {n: "Mem Nhóm Kín SV2", p: 8500, d: "Chỉ nhận link nhóm không kiểm duyệt."}
-        ]},
-        f4: { n: "Fanpage (Like + Follow)", svs: [
-            {n: "Page Like + Follow SV1", p: 4500, d: "Tăng cả like trang và follow."},
-            {n: "Follow Page SV2 (Giá rẻ)", p: 2500, d: "Chỉ tăng lượt theo dõi trang."}
-        ]},
-        f5: { n: "Mắt Livestream", svs: [
-            {n: "Mắt Live 30 Phút", p: 15000, d: "Duy trì ổn định trong 30p."},
-            {n: "Mắt Live 60 Phút", p: 28000, d: "Hỗ trợ seeding trong live."}
-        ]}
+    fb: { n: "Facebook", cats: {
+        f1: { n: "Like Bài Viết", svs: [{n: "Like Việt Tốc Độ", p: 800, d: "Lên ngay sau 5p."}, {n: "Like Tây Giá Rẻ", p: 400, d: "Dùng để buff số lượng."}]},
+        f2: { n: "Theo dõi (Sub Profile)", svs: [{n: "Sub VIP Bao Tụt", p: 3500, d: "Bảo hành 30 ngày."}, {n: "Sub Thật Nick Cổ", p: 5500, d: "Rất an toàn cho nick."}]},
+        f3: { n: "Thành viên Nhóm", svs: [{n: "Mem Nhóm Công Khai", p: 6000, d: "Tăng uy tín Group."}]},
+        f4: { n: "Mắt Livestream", svs: [{n: "Mắt Duy Trì 30p", p: 15000, d: "Duy trì ổn định."}]}
     }},
-    tt: { n: "TIKTOK", cats: {
-        t1: { n: "Follow TikTok", svs: [
-            {n: "Follow Việt SV1 (Xịn)", p: 16000, d: "Nick thật, hỗ trợ bật kiếm tiền."},
-            {n: "Follow Global SV5 (Rẻ)", p: 8500, d: "Lên nhanh, max 1M follow."}
-        ]},
-        t2: { n: "Like (Tim) TikTok", svs: [
-            {n: "Tym Video SV1", p: 3200, d: "Tăng đề xuất cực tốt."},
-            {n: "Tym Comment", p: 4500, d: "Đẩy top bình luận."}
-        ]},
-        t3: { n: "View TikTok", svs: [
-            {n: "View Speed SV1", p: 100, d: "1 triệu view trong 30 phút."},
-            {n: "View Duy Trì (Bền)", p: 250, d: "Xem hết video mới tính view."}
-        ]},
-        t4: { n: "Share / Favorite TikTok", svs: [
-            {n: "Chia sẻ video SV1", p: 1200, d: "Kéo tương tác mạnh."},
-            {n: "Lượt yêu thích SV2", p: 1500, d: "Lưu vào danh sách yêu thích."}
-        ]}
+    tt: { n: "TikTok", cats: {
+        t1: { n: "Follow TikTok", svs: [{n: "Follow Việt (Xịn)", p: 18000, d: "Acc thật, hỗ trợ bật Live."}, {n: "Follow Global", p: 9000, d: "Tốc độ cực nhanh."}]},
+        t2: { n: "Tim (Like) TikTok", svs: [{n: "Tim Lên Đều", p: 3500, d: "An toàn cho kênh."}, {n: "Tim Speed", p: 2000, d: "Lên nhanh số lượng lớn."}]},
+        t3: { n: "View TikTok", svs: [{n: "View Triệu Lượt", p: 100, d: "Cực rẻ để kéo đề xuất."}]}
     }},
-    yt: { n: "YOUTUBE", cats: {
-        y1: { n: "Đăng ký (Subscriber)", svs: [
-            {n: "Sub YouTube Bao Tụt", p: 55000, d: "Bảo hành vĩnh viễn."},
-            {n: "Sub YouTube Giá Rẻ", p: 35000, d: "Không bảo hành tụt."}
-        ]},
-        y2: { n: "Giờ xem (4000 Giờ)", svs: [
-            {n: "Gói bật kiếm tiền 4k giờ", p: 450000, d: "Yêu cầu video dài trên 1 tiếng."}
-        ]}
+    yt: { n: "YouTube", cats: {
+        y1: { n: "Sub YouTube", svs: [{n: "Sub Chất Lượng", p: 55000, d: "Bảo hành vĩnh viễn."}]},
+        y2: { n: "View YouTube", svs: [{n: "View SEO Top", p: 45000, d: "Nguồn thật ổn định."}]}
     }},
-    gm: { n: "GOOGLE MAP", cats: {
-        g1: { n: "Đánh giá 5 Sao", svs: [
-            {n: "Review Nick Local Guide", p: 45000, d: "Tăng uy tín địa điểm cực mạnh."},
-            {n: "Review Nick Thường", p: 25000, d: "Tăng số lượng đánh giá."}
-        ]}
-    }},
-    tl: { n: "TELEGRAM", cats: {
-        l1: { n: "Member Channel/Group", svs: [
-            {n: "Mem Global SV1", p: 7500, d: "Thành viên quốc tế."},
-            {n: "Mem Việt SV2 (Chất)", p: 24000, d: "Người dùng Việt thật 100%."}
-        ]}
-    }},
-    sp: { n: "SHOPEE", cats: {
-        s1: { n: "Follow Gian Hàng", svs: [
-            {n: "Follow Shopee SV1", p: 15000, d: "Tăng uy tín shop mới."}
-        ]}
-    }},
-    thr: { n: "THREADS", cats: {
-        th1: { n: "Follow Threads", svs: [
-            {n: "Follow Threads SV1", p: 18000, d: "Lên cực nhanh cho Threads."}
-        ]}
-    } }
+    gm: { n: "Google Maps", cats: {
+        g1: { n: "Đánh giá 5 Sao", svs: [{n: "Review Local Guide", p: 45000, d: "Tăng uy tín địa điểm."}]}
+    }}
 };
 
-const pltS = document.getElementById('plt');
-const catS = document.getElementById('cat');
-const svcS = document.getElementById('svc');
-const totalS = document.getElementById('total');
-let curP = 0;
+let price = 0;
+const pltS = document.getElementById('plt'), catS = document.getElementById('cat'), svcS = document.getElementById('svc');
 
-// Load Nền tảng
-for(let k in DB) pltS.innerHTML += `<option value="${k}">${DB[k].n}</option>`;
-
-function chgPlt() {
-    catS.innerHTML = '<option value="">-- Chọn --</option>';
+function loadCat() {
+    catS.innerHTML = '<option value="">-- Chọn Phân Loại --</option>';
     catS.disabled = !pltS.value;
-    if(pltS.value) {
-        for(let k in DB[pltS.value].cats) catS.innerHTML += `<option value="${k}">${DB[pltS.value].cats[k].n}</option>`;
-    }
-    chgCat();
+    if(pltS.value) for(let k in DB[pltS.value].cats) catS.innerHTML += `<option value="${k}">${DB[pltS.value].cats[k].n}</option>`;
+    loadSvc();
 }
 
-function chgCat() {
-    svcS.innerHTML = '<option value="">-- Chọn --</option>';
+function loadSvc() {
+    svcS.innerHTML = '<option value="">-- Chọn Server --</option>';
     svcS.disabled = !catS.value;
     if(catS.value) {
         DB[pltS.value].cats[catS.value].svs.forEach(s => {
             let p20 = Math.round(s.p * 1.2);
-            svcS.innerHTML += `<option value="${p20}" data-d="${s.d}" data-n="${s.n}">${s.n} [${p20}đ]</option>`;
+            svcS.innerHTML += `<option value="${p20}" data-d="${s.d}" data-n="${s.n}">${s.n} - [${p20}đ]</option>`;
         });
     }
-    chgSvc();
+    showSvc();
 }
 
-function chgSvc() {
-    const dBox = document.getElementById('svc_desc');
+function showSvc() {
+    const m = document.getElementById('msg');
     if(svcS.value) {
-        curP = parseInt(svcS.value);
-        dBox.style.display = 'block';
-        dBox.innerHTML = `<strong>Mô tả:</strong> ${svcS.options[svcS.selectedIndex].dataset.d}`;
-    } else {
-        dBox.style.display = 'none';
-        curP = 0;
-    }
+        price = parseInt(svcS.value);
+        m.style.display = 'block';
+        m.innerHTML = `<b>Thông tin:</b> ${svcS.options[svcS.selectedIndex].dataset.d}`;
+    } else { m.style.display = 'none'; price = 0; }
     calc();
 }
 
 function calc() {
-    totalS.innerText = Math.round((document.getElementById('qty').value / 1000) * curP).toLocaleString();
+    document.getElementById('total').innerText = Math.round((document.getElementById('qty').value / 1000) * price).toLocaleString();
 }
 
-function order() {
-    const l = document.getElementById('link').value;
-    if(!l) return alert("Nhập link anh Tiến ơi!");
-    const msg = `ĐƠN HÀNG MỚI:\n- Dịch vụ: ${svcS.options[svcS.selectedIndex].dataset.n}\n- Link: ${l}\n- Tổng: ${totalS.innerText} VNĐ`;
+function pay() {
+    const link = document.getElementById('link').value;
+    if(!link) return alert("Anh Tiến ơi, chưa nhập link!");
+    const msg = `ĐƠN HÀNG MỚI:\n- Dịch vụ: ${svcS.options[svcS.selectedIndex].dataset.n}\n- Link: ${link}\n- Tổng tiền: ${document.getElementById('total').innerText} VNĐ`;
     window.open(`https://zalo.me/0966181924?text=${encodeURIComponent(msg)}`);
 }
 </script>
