@@ -1,260 +1,511 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGUYỄN NHẬT TIẾN - DỊCH VỤ MXH</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>KHO MMO - SHOP NT</title>
+    <meta property="og:title" content="NGUYỄN NHẬT TIẾN">
+    <meta property="og:description" content="Cung cấp tài nguyên & Dịch vụ MMO chuyên nghiệp">
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    html { scroll-behavior: smooth; }
+    .menu-btn { whitespace-nowrap; px-4; py-2; bg-purple-600/30; border; border-purple-500/50; border-radius: 9999px; font-size: 11px; font-weight: bold; color: white; flex-shrink: 0; }
+</style>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --primary: #0062ff; --bg: #f4f7fa; --text: #1e293b; --card: #ffffff; --border: #e2e8f0; }
-        
-        body { 
-            background: var(--bg); 
-            color: var(--text); 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            align-items: flex-start; 
-            min-height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .main { width: 100%; max-width: 600px; }
-
-        .brand-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .brand-header h1 {
-            margin: 0;
-            color: var(--primary);
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .card { 
-            background: var(--card); 
-            border: 1px solid var(--border); 
-            padding: 25px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
-        }
-
-        h2 { 
-            color: #0f172a; 
-            margin-top: 0; 
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; }
-        
-        select, input { 
-            width: 100%; 
-            padding: 14px; 
-            background: #f8fafc; 
-            border: 2px solid #e2e8f0; 
-            color: #1e293b; 
-            border-radius: 12px; 
-            font-size: 15px; 
-            outline: none; 
-            box-sizing: border-box;
-            transition: 0.3s;
-        }
-        select:focus, input:focus { border-color: var(--primary); background: #fff; }
-
-        .desc-info { 
-            background: #eff6ff; 
-            border-left: 4px solid var(--primary); 
-            padding: 15px; 
-            border-radius: 8px; 
-            margin: 15px 0; 
-            font-size: 14px; 
-            display: none; 
-            color: #1e40af; 
-            line-height: 1.6;
-            white-space: pre-line;
-        }
-
-        .price-panel { 
-            background: var(--primary); 
-            color: white; 
-            padding: 20px; 
-            border-radius: 15px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            margin-top: 25px; 
-        }
-        .price-val { font-size: 24px; font-weight: 800; }
-
-        .btn-order { 
-            width: 100%; 
-            padding: 18px; 
-            background: #22c55e; 
-            color: white; 
-            border: none; 
-            border-radius: 15px; 
-            font-size: 18px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
-            transition: 0.3s;
-        }
-        .btn-order:active { transform: scale(0.98); }
-
-        .footer-contact {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 13px;
-            color: #94a3b8;
-        }
-    </style>
+        body { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh; font-family: sans-serif; color: white; display: flex; justify-content: center; align-items: flex-start; padding: 40px 20px; }
+        .main-container { width: 100%; max-width: 450px; } 
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 12px 18px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; font-size: 14px; }
+        .glass:hover { background: rgba(168, 85, 247, 0.1); transform: translateX(5px); }
+        .price { color: #facc15; font-weight: bold; font-size: 13px; }
+        details summary { list-style: none; cursor: pointer; background: rgba(168, 85, 247, 0.2); padding: 15px; border-radius: 12px; font-weight: bold; text-transform: uppercase; border: 1px solid rgba(168, 85, 247, 0.4); margin-top: 15px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; font-size: 13px; }
+        details summary:hover { background: rgba(168, 85, 247, 0.4); }
+        details[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; background: #a855f7; }
+        .content { border: 1px solid rgba(168, 85, 247, 0.4); border-top: none; padding: 10px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; background: rgba(255, 255, 255, 0.02); }
+        .sub-cat { font-size: 10px; color: #a855f7; font-weight: bold; margin: 15px 0 8px 8px; letter-spacing: 1px; }
+        .contact-group { display: flex; gap: 8px; margin-top: 15px; }
+        .btn-sm { flex: 1; py: 3; border-radius: 10px; font-weight: bold; font-size: 10px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 3px; height: 40px; }
+    #notification { 
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); 
+    background: #a855f7; color: white; padding: 12px 25px; border-radius: 50px; 
+    font-size: 13px; font-weight: bold; box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4); 
+    z-index: 9999; display: none; animation: fadeInUp 0.3s ease; 
+    border: 1px solid rgba(255,255,255,0.3); text-align: center; width: 85%; max-width: 400px; 
+}
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translate(-50%, 20px); } 
+    to { opacity: 1; transform: translate(-50%, 0); } 
+}</style>
 </head>
 <body>
+    <div class="main-container">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-black bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent uppercase tracking-tighter">NGUYỄN NHẬT TIẾN</h1>
+            <p class="text-gray-400 text-[10px] mt-2 italic uppercase tracking-widest">Dịch vụ MMO chuyên nghiệp</p>
+        </div>
 
-<div class="main">
-    <div class="brand-header">
-        <h1>NGUYỄN NHẬT TIẾN</h1>
-    </div>
-
-    <div class="card">
-        <h2><i class="fa-brands fa-tiktok"></i> HỆ THỐNG DỊCH VỤ</h2>
         
-        <div class="form-group">
-            <label>1. Nền tảng</label>
-            <select id="plt" onchange="loadCat()">
-                <option value="tt">TIKTOK (Mặc Định)</option>
-                <option value="fb">FACEBOOK</option>
-                <option value="yt">YOUTUBE</option>
-                <option value="tl">TELEGRAM</option>
-            </select>
+        <details>
+            <summary>📊 TĂNG TƯƠNG TÁC ĐA NỀN TẢNG <span>▼</span></summary>
+            <div class="content">
+                <div class="sub-cat">FACEBOOK</div>
+                <div class="glass"><span>1000 Theo dõi (Follow) Facebook</span><span class="price">2.958đ</span></div>
+                <div class="glass"><span>1000 Cảm xúc bày viết VN</span><span class="price">6.702đ</span></div>
+                <div class="glass"><span>1000 Cảm xúc tây</span><span class="price">6.206đ</span></div>
+                <div class="glass"><span>1000 View Story / Video Reels</span><span class="price">3.669đ</span></div>
+                <div class="glass"><span>1000 Thành viên nhóm (Group)</span><span class="price">6.430đ</span></div>
+                <div class="glass"><span>1000 Chia sẻ Hổ Trợ Live/Video/Post/Photo</span><span class="price">13.052đ</span></div>
+
+                <div class="sub-cat">TIKTOk</div>
+                <div class="glass"><span>1000 View TikTok</span><span class="price">298đ</span></div>
+                <div class="glass"><span>1000 Tim ảo</span><span class="price">758đ</span></div>
+                <div class="glass"><span>1000 Tim Tây hiếm tụt</span><span class="price">2.138đ</span></div>
+                <div class="glass"><span>1000 Tim Tây không tụt chậm</span><span class="price">3.961đ</span></div>
+                <div class="glass"><span>1000 Tim Tây Vip không tụt - lên nhanh♻️</span><span class="price">4.612đ</span></div>
+                <div class="glass"><span>1000 Yêu thích</span><span class="price">398đ</span></div>
+                <div class="glass"><span>1000 Chia sẽ bonus 100-200%</span><span class="price">669đ</span></div>
+                <div class="glass"><span>1000 Bình luận Tự Soạn | 𝐇𝐐 Profiles |</span><span class="price">22.811đ</span></div>
+                <div class="glass"><span>1000 Bình luận Tự Soạn  lên chậm | Việt Nam | Tắt lọc |</span><span class="price">34.352đ</span></div>
+                <div class="glass"><span>1000 Bình Luận | Việt Nam | Tùy Chọn Nội Dung | Lên Ngay Khi Cài🔥</span><span class="price">147.901đ</span></div>
+                <div class="glass"><span>1000 Follow Việt Nam 1000/24h🔥</span><span class="price">12.496đ</span></div>
+                <div class="glass"><span>1000 Follow Tây Nhanh🔥</span><span class="price">18.845đ</span></div>
+                <div class="glass"><span>1000 Lượt thích bình luận</span><span class="price">2.945đ</span></div>
+                <div class="sub-cat">INSTAGRAM</div>                                                                                                                                                                                                                  <div class="glass"><span>1000 Follow nhanh</span><span class="price">30.000đ</span></div>
+                <div class="glass"><span>1000 Tim ảo lên chậm</span><span class="price">4.144đ</span></div>
+                <div class="glass"><span>1000 View </span><span class="price">50đ</span></div>
+                <div class="glass"><span>1000 Follow chậm Apps Data</span><span class="price">8.295đ</span></div>
+                <div class="glass"><span>1000 Follow Mới Khuyên Dùng</span><span class="price">20.845đ</span></div>
+                <div class="sub-cat">YOUTUBE</div>
+                <div class="glass"><span>1000 Like Video Ngắn</span><span class="price">18.424đ</span></div>
+                <div class="glass"><span>1000 View Video Ngắn</span><span class="price">28.301đ</span></div>
+                <div class="glass"><span>1000 View Video Dài</span><span class="price">28.944đ</span></div>
+                <div class="sub-cat">THREADS</div>
+                <div class="glass"><span>1000 Follow Threads</span><span class="price">100.000đ</span></div>
+                <div class="sub-cat">TELEGRAM</div>
+                <div class="glass"><span>1000 Cảm xúc Random</span><span class="price">888đ</span></div>
+                <div class="glass"><span>1000 Thành viên nhóm| 3 Days ♻️ | Day 100K 🚀</span><span class="price">810đ</span></div>
+                <div class="glass"><span>1000 Thành viên nhóm| 90 Days ♻️ | Day 100K 🚀</span><span class="price">29.368đ</span></div>
+                <div class="sub-cat">GOOGLE MAP</div>
+                <div class="glass"><span> 1000 Đánh giá 5 sao Google Map</span><span class="price">16.292.308đ</span></div>
+                <div class="contact-group">
+                    <a href="https://zalo.me/0966181924" class="btn-sm bg-blue-600">💬 Zalo</a>
+                    <a href="https://t.me/ntienz8386" class="btn-sm bg-sky-500">✈️ Telegram</a>
+                    <a href="https://www.facebook.com/ntien210" class="btn-sm bg-blue-800">📘 Facebook</a></div>
+            </div>
+        </details>
+
+<details>
+            <summary>🔥 Tài Nguyên Tut <span>▼</span></summary>
+            <div class="content">
+                <div class="glass"><span>Gỡ SĐT dùng chung FB</span><span class="price">70.000đ</span></div>
+                <div class="glass"><span>Add Email vào Facebook</span><span class="price">70.000đ</span></div>
+                <div class="glass"><span>Add SĐT vào Facebook</span><span class="price">70.000đ</span></div>
+                <div class="glass"><span>Đá kick all thiết bị FB</span><span class="price">70.000đ</span></div>
+                <div class="glass bg-purple-900/40 border-purple-500"><span>🎁 COMBO 4 TUT + VIDEO</span><span class="price">220.000đ</span></div>
+                <div class="glass"><span>Spam kết bạn không GH</span><span class="price">50.000đ</span></div>
+                <div class="glass"><span>Locket quay 15s (No VPN)</span><span class="price">40.000đ</span></div>
+                <div class="glass"><span>Zalo lên Business</span><span class="price">100.000đ</span></div>
+                <div class="glass"><span>Tạo STK đẹp MBBank</span><span class="price">30.000đ</span></div>
+                <div class="glass"><span>Dame Profile mới</span><span class="price">50.000đ</span></div>
+                <div class="glass"><span>Fake bill</span><span class="price">10.000đ</span></div>
+                <div class="glass"><span>Vô hiệu hóa mail</span><span class="price">120.000đ</span></div>
+                <div class="contact-group">
+                    <a href="https://zalo.me/0966181924" class="btn-sm bg-blue-600">💬 Zalo</a>
+                    <a href="https://t.me/ntienz8386" class="btn-sm bg-sky-500">✈️ Telegram</a>
+                    <a href="https://www.facebook.com/ntien210" class="btn-sm bg-blue-800">📘 Facebook</a></div>
+            </div>
+        </details>
+
+        
+        <details>
+            <summary>❄️CÀY GAME THUÊ <span>▼</span></summary>
+            <div class="content">
+                <div class="glass"><span>Free Fire</span><span class="price">Liên hệ báo giá</span></div>
+                <div class="glass"><span>Liên Quân</span><span class="price">Liên hệ báo giá</span></div>
+                <div class="glass"><span>FC Mobile VN & Quốc Tế</span><span class="price">Liên hệ báo giá</span></div>
+                <div class="flex gap-2 my-4">
+                    <a href="https://zalo.me/0966181924" class="btn-contact bg-blue-600 py-3 rounded-xl flex-1 text-center">💬 Zalo</a>
+                    <a href="https://t.me/ntienz8386" class="btn-contact bg-sky-500 py-3 rounded-xl flex-1 text-center">✈️ Telegram</a>
+                    <a href="https://www.facebook.com/ntien210" class="btn-contact bg-blue-800 py-3 rounded-xl flex-1 text-center">📘 Facebook</a></div>
+            </div>
+        </details>
+        
+        <details>     
+            <summary>🛍️ VOUHER SHOPEE<span>▼</span></summary>
+            <div class="content">
+                <div class="sub-cat">SHOPEE</div>
+                <div class="glass"><span>Voucher 60k đơn tối thiểu 0đ</span><span class="price">7.000đ</span></div>
+                <div class="glass"><span>Đặt hàng áp voucher hộ</span><span class="price">25.000đ</span></div>
+                <div class="contact-group">
+                    <a href="https://zalo.me/0966181924" class="btn-sm bg-blue-600">💬 Zalo</a>
+                    <a href="https://t.me/ntienz8386" class="btn-sm bg-sky-500">✈️ Telegram</a>
+                    <a href="https://www.facebook.com/ntien210" class="btn-sm bg-blue-800">📘 Facebook</a></div>
+            </div>
+        </details>
+
+       <details>
+            <summary>✅TÍCH XANH FACEBOOK <span>▼</span></summary>
+            <div class="content">
+                <div class="glass"><span>Tích Xanh theo tên</span><span class="price">450.000đ</span></div>
+                <div class="glass"><span>Tích Xanh Chính Chủ</span><span class="price">2.500.000đ</span></div>
+                <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+                <details>
+            <summary>🔒UNLOCK TIKTOK & FACEBOOK <span>▼</span></summary>
+            <div class="content">
+                 <div class="sub-cat">Unlock Facebook</div>
+                <div class="glass"><span>Unlock các dạng;282,583,907,956,...</span><span class="price">Liên hệ báo giá</span></div>
+                 <div class="sub-cat"> Unlock Tiktok</div>
+                 <div class="glass"><span>Mở giới hạn độ tuổi</span><span class="price">150.000đ</span></div>
+                 <div class="glass"><span>Unlock cấm Chat</span><span class="price">Liên hệ báo giá</span></div>
+                 <div class="glass"><span>Unlock cấm Live</span><span class="price">Liên hệ báo giá</span></div>
+                 <div class="glass"><span>Unlock Acc bị khóa</span><span class="price">Liên hệ báo giá</span></div>
+                <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+         <details>
+            <summary>🛑DAME FACEBOOK & TIKTOK<span>▼</span></summary>
+            <div class="content">
+                <div class="sub-cat">Dame Facebook</div>
+                <div class="glass"><span>Dame Facebook</span><span class="price">Liên hệ báo giá</span></div>
+                <div class="glass"><span>Dame Tiktok</span><span class="price">Liên hệ báo giá</span></div>
+                <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+     <details>
+            <summary>💎TÀI KHOẢN PREMIUM,PRO,PLUS<span>▼</span></summary>
+            <div class="content">
+                <div class="sub-cat">ChatGPT</div>
+                <div class="glass"><span>ChatGPT Plus 1 Tháng [ Acc cấp ]</span><span class="price">45.000đ</span></div>
+                <div class="glass"><span>ChatGPT Plus 1 Tháng ( Chính chủ , VIP )</span><span class="price">45.000đ</span></div>
+                <div class="glass"><span>Team ChatGPT Bussiness ( HOT )</span><span class="price">135.000đ</span></div>
+                <div class="sub-cat">Capcut</div>
+                <div class="glass"><span>Capcut Pro 7 ngày</span><span class="price">17.000đ</span></div>
+                <div class="glass"><span>Capcut Pro random 7-9 Tháng [ Acc cấp ]</span><span class="price">210.000đ</span></div>
+                <div class="glass"><span>Capcut Pro 13 Tháng [ Acc Cấp ]</span><span class="price">420.000đ</span></div>
+                <div class="sub-cat">Youtube</div>
+                <div class="glass"><span>Youtube Premium</span><span class="price">30.000đ</span></div>
+                <div class="sub-cat">Canva</div>
+                <div class="glass"><span>Canva Edu 1 tháng</span><span class="price">25.000đ</span></div>
+                <div class="glass"><span>Canva Edu 1 năm ( Mail chính chủ )</span><span class="price">70.000đ</span></div>
+                <div class="sub-cat">ExpressVPN</div>
+                <div class="glass"><span>ExpressVPN 1 tháng [ Acc Cấp ]</span><span class="price">40.000đ</span></div>
+                 <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+         <details>
+            <summary>🕐THUÊ GMAIL<span>▼</span></summary>
+            <div class="content">
+                <div class="glass"><span>Gmail edu cho thuê 15 Ngày domain org</span><span class="price">5.000đ</span></div>
+                <div class="glass"><span>Gmail domain edu cho thuê 24h tên Việt domain .us không Gmail</span><span class="price">500đ</span></div>
+                <div class="glass"><span>Gmail Domain sử dụng Youtube +Vote +Maps(H-X)- Vĩnh Viễn không có Gmail</span><span class="price">10.000đ</span></div>
+                <div class="glass"><span>Gmail cổ 2019-2023 (OK tất cả các dịch vụ trừ Dv Youtube bị die)</span><span class="price">35.000đ</span></div>
+                <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+        <details>
+            <summary>💬VIA FACEBOOK<span>▼</span></summary>
+            <div class="content">
+                <div class="glass"><span>VIA NGOẠI 2025 - CÓ NÚT LÊN TÍCH XANH - 2FA - VER HOTMAIL TRUST - LIVE ADS 100% - BẠN BÈ 20-500</span><span class="price">60.000đ</span></div>
+                <div class="glass"><span>VIA VIỆT 2014-2019 - AVATAR - 2FA - INFO + TIỂU SỬ - BẠN BÈ (500-2000) ĐÃ QUA 282 + 956</span><span class="price">285.000đ</span></div>
+                <div class="glass"><span>VIA VIỆT NAM 2019-2022 - AVATAR + BÌA - 2FA - INFO - BẠN BÈ (50-500) ĐÃ QUA 282 + 956</span><span class="price">150.000đ</span></div>
+                <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+         <details>
+            <summary>🔹ACC FACEBOOK<span>▼</span></summary>
+            <div class="content">
+                <div class="glass"><span>ACC CLONE TẠO 8 THÁNG - 1 NĂM , BẠN BÈ 20-500</span><span class="price">20.000đ</span></div>
+        <div class="mt-12 text-center pt-8 border-t border-white/10">
+            <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+         <details>
+            <summary>💳PAYPOL<span>▼</span></summary>
+            <div class="content">
+                <div class="glass"><span>PayPal VN [ Ngon , Bảo hành đỏ ]</span><span class="price">30.000đ</span></div>
+                <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+        <details>
+            <summary>🏷️THẺ NẠP GAME<span>▼</span></summary>
+            <div class="content">
+                <div class="sub-cat">Thẻ Garena</div>
+                <div class="glass"><span>Thẻ Garena 5.000đ</span><span class="price">4.900đ</span></div>
+                <div class="glass"><span>Thẻ Garena 10.000đ</span><span class="price">9.750đ</span></div>
+                <div class="glass"><span>Thẻ Garena 20.000đ</span><span class="price">19.500đ</span></div>
+                <div class="glass"><span>Thẻ Garena 50.000đ</span><span class="price">48.500đ</span></div>
+                <div class="glass"><span>Thẻ Garena 100.000</span><span class="price">97.000đ</span></div>
+                <div class="glass"><span>Thẻ Garena 200.000đ</span><span class="price">193.000đ</span></div>
+                <div class="glass"><span>Thẻ Garena 500.000đ</span><span class="price">485.000đ</span></div>
+                 <div class="contact-group flex gap-2 mt-4">
+                    <a href="https://zalo.me/0966181924" target="_blank" class="flex-1 py-3 bg-blue-600 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-500/20">
+                        📱 Zalo
+                    </a>
+                    <a href="https://t.me/ntienz8386" target="_blank" class="flex-1 py-3 bg-sky-500 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-sky-500/20">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://www.facebook.com/ntien210" target="_blank" class="flex-1 py-3 bg-blue-800 rounded-xl font-bold text-[10px] flex items-center justify-center gap-1 shadow-lg shadow-blue-900/20">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </details>
+            <div class="flex gap-2">
+                <a href="https://zalo.me/0966181924" class="btn-sm bg-blue-600 h-12 rounded-xl flex-1">Zalo</a>
+                <a href="https://t.me/ntienz8386" class="btn-sm bg-sky-500 h-12 rounded-xl flex-1">Telegram</a>
+                <a href="https://www.facebook.com/ntien210" class="btn-sm bg-blue-800 h-12 rounded-xl flex-1">Facebook</a>
+            </div>
+            <p class="mt-8 text-[8px] text-gray-600 uppercase tracking-[4px]">© 2026 NGUYEN NHAT TIEN</p>
         </div>
-
-        <div class="form-group">
-            <label>2. Phân loại</label>
-            <select id="cat" onchange="loadSvc()"></select>
-        </div>
-
-        <div class="form-group">
-            <label>3. Dịch vụ (Server)</label>
-            <select id="svc" onchange="showSvc()"></select>
-        </div>
-
-        <div id="msg" class="desc-info"></div>
-
-        <div class="form-group">
-            <label>4. Link bài viết / Profile</label>
-            <input type="text" id="link" placeholder="Dán link vào đây...">
-        </div>
-
-        <div class="form-group">
-            <label>5. Số lượng</label>
-            <input type="number" id="qty" value="1000" oninput="calc()">
-        </div>
-
-        <div class="price-panel">
-            <span>TỔNG TIỀN:</span>
-            <div class="price-val"><span id="total">0</span> VNĐ</div>
-        </div>
-
-        <button class="btn-order" onclick="pay()">XÁC NHẬN THANH TOÁN</button>
-    </div>
-
-    <div class="footer-contact">
-        Hỗ trợ kỹ thuật Zalo: <b>0966181924</b>
-    </div>
-</div>
-
 <script>
-const DB = {
-    tt: { n: "TikTok", cats: {
-        t1: { n: "Follow Việt Nam", svs: [
-            {n: "TikTok Follows | Việt Nam 🇻🇳 | Bấm Tay | 1000/24h🔥", p: 12560, d: "Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."},
-            {n: "TikTok Follower | Việt Nam 🇻🇳 | Chất Lượng Tốt | Đang Ổn🔥", p: 21778, d: "Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."}
-        ]},
-        t2: { n: "Follow Tây giá rẻ", svs: [
-            {n: "TikTok Followers | LQ Profile | Max 10M | Nhanh🔥", p: 18906, d: "Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."},
-            {n: "TikTok Followers | 100% Real Users | Hoạt Động", p: 21799, d: "Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."}
-        ]},
-        t3: { n: "Follow Tây chất lượng cao", svs: [
-            {n: "TikTok Followers | Max 1M | Bảo Hành♻️ | Hiếm Tụt 🔥", p: 38577, d: "Liên Kết : Bảo hành 7 ngày.\nUsername Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."},
-            {n: "TikTok Followers | Real Active Accounts | Ít Tụt🔥", p: 35688, d: "Liên Kết : Username Hoặc Link Profile\n⚠️Kiểm tra định dạng Link cẩn thận.\n⚠️Tài khoản phải ở chế độ công khai."}
-        ]},
-        t4: { n: "View TikTok", svs: [{n: "View Cực Rẻ", p: 100, d: "Min 1000 view."}]}
-    }},
-    fb: { n: "Facebook", cats: {
-        f1: { n: "Like Bài Viết", svs: [{n: "Like Việt Speed", p: 800, d: "Lên ngay."}, {n: "Like Tây", p: 400, d: "Giá rẻ."}]},
-        f2: { n: "Sub Profile", svs: [{n: "Sub VIP", p: 3500, d: "Chất lượng cao."}]}
-    }},
-    yt: { n: "YouTube", cats: {
-        y1: { n: "Sub YouTube", svs: [{n: "Sub Thật", p: 55000, d: "An toàn cho kênh."}]}
-    }},
-    tl: { n: "Telegram", cats: {
-        l1: { n: "Member Group", svs: [{n: "Mem Global", p: 7500, d: "Tăng số lượng nhanh."}]}
-    }}
-};
+document.addEventListener('DOMContentLoaded', function() {
+    const details = document.querySelectorAll('details');
+    
+    details.forEach(detail => {
+        const summary = detail.querySelector('summary');
+        
+        // Chỉ kích hoạt trong mục TĂNG TƯƠNG TÁC
+        if (summary && summary.innerText.toUpperCase().includes('TĂNG TƯƠNG TÁC')) {
+            
+            // 1. Thêm lưu ý chung khi mở mục ra
+            summary.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                if (!content.querySelector('.note-chung')) {
+                    const noteChung = document.createElement('div');
+                    noteChung.className = 'note-chung';
+                    noteChung.innerHTML = `
+                        <div style="background:rgba(255,0,0,0.1); border:1px solid red; padding:10px; margin:10px; border-radius:10px; color:#ff4d4d; font-weight:bold; font-size:13px; text-align:center;">
+                            📢 HƯỚNG DẪN: Nhấp vào các dòng dịch vụ bên dưới để đặt hàng.
+                        </div>`;
+                    content.prepend(noteChung);
+                }
+            });
 
-let price = 0;
-const pltS = document.getElementById('plt'), catS = document.getElementById('cat'), svcS = document.getElementById('svc');
+            // 2. Xử lý khi nhấn vào từng dịch vụ (glass)
+            const items = detail.querySelectorAll('.glass');
+            items.forEach(item => {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Xóa form cũ nếu đang mở ở chỗ khác
+                    const oldForm = document.querySelector('.order-box');
+                    if (oldForm) oldForm.remove();
 
-window.onload = function() { loadCat(); };
+                    const name = this.querySelector('span:first-child').innerText;
+                    const priceText = this.querySelector('.price').innerText;
+                    const pricePer1k = parseInt(priceText.replace(/\D/g, '')) || 0;
 
-function loadCat() {
-    catS.innerHTML = '';
-    const selectedPlt = pltS.value;
-    if(DB[selectedPlt]) {
-        for(let k in DB[selectedPlt].cats) {
-            catS.innerHTML += `<option value="${k}">${DB[selectedPlt].cats[k].n}</option>`;
+                    const orderBox = document.createElement('div');
+                    orderBox.className = 'order-box';
+                    orderBox.style = "background:#0f172a; border:2px solid #a855f7; padding:15px; margin:10px; border-radius:15px; color:white; font-family:sans-serif; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);";
+                    
+                    orderBox.innerHTML = `
+                        <h4 style="color:#a855f7; margin:0 0 12px 0; font-size:16px; border-bottom:1px solid #1e293b; padding-bottom:5px;">🛒 Đặt hàng: ${name}</h4>
+                        
+                        <div style="margin-bottom:10px;">
+                            <label style="font-size:12px; color:#94a3b8;">Dán Link (bài viết/trang cá nhân):</label>
+                            <input type="text" id="link-v" placeholder="https://facebook.com/..." style="width:100%; padding:10px; margin-top:5px; border-radius:8px; border:1px solid #334155; background:#020617; color:white; box-sizing:border-box;">
+                        </div>
+
+                        <div style="margin-bottom:15px;">
+                            <label style="font-size:12px; color:#94a3b8;">Số lượng cần tăng:</label>
+                            <input type="number" id="qty-v" value="1000" step="100" style="width:100%; padding:10px; margin-top:5px; border-radius:8px; border:1px solid #334155; background:#020617; color:white; box-sizing:border-box;">
+                        </div>
+                        
+                        <button id="btn-confirm" style="width:100%; background:linear-gradient(90deg, #a855f7, #7c3aed); color:white; border:none; padding:12px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:14px;">XÁC NHẬN & THANH TOÁN</button>
+                        
+                        <div id="qr-area" style="display:none; text-align:center; margin-top:15px; border-top:1px solid #1e293b; padding-top:15px;">
+                            <p style="color:#f87171; font-size:12px; font-weight:bold; margin-bottom:10px;">Lưu QR để chuyển khoản và Chụp bill khi chuyển khoản thành công</p>
+                            <img id="qr-img" src="qrzalo.jpg" style="width:220px; border-radius:12px; border: 4px solid white; background:white;">
+                            <div style="background:#1e293b; padding:12px; border-radius:10px; margin:15px 0;">
+                                <p style="font-size:13px; color:#cbd5e1; margin:0;">Tổng số tiền cần chuyển:</p>
+                                <p id="final-total" style="color:#4ade80; font-weight:bold; font-size:24px; margin:5px 0;"></p>
+                                <p style="font-size:10px; color:#94a3b8;">(Vui lòng nhập đúng số tiền khi chuyển khoản)</p>
+                            </div>
+                            <button id="btn-done" style="width:100%; background:#22c55e; color:white; border:none; padding:12px; border-radius:8px; font-weight:bold; cursor:pointer;">ĐÃ THANH TOÁN</button>
+                        </div>
+
+                        <div id="copy-area" style="display:none; background:#020617; padding:15px; margin-top:15px; border-radius:10px; border:1px dashed #22c55e;">
+                            <p style="color:#4ade80; font-size:12px; margin-bottom:8px; font-weight:bold;">✅ BƯỚC CUỐI: Copy nội dung này gửi Zalo</p>
+                            <textarea id="copy-text" style="width:100%; height:110px; background:transparent; color:#e2e8f0; border:none; font-size:13px; resize:none; font-family:monospace;" readonly></textarea>
+                            <button id="btn-copy" style="width:100%; background:#0068ff; color:white; border:none; padding:12px; border-radius:8px; margin-top:10px; font-weight:bold; cursor:pointer;">COPY & NHẮN ZALO CHO TIẾN</button>
+                        </div>
+                    `;
+                    
+                    this.after(orderBox);
+
+                    // Nút xác nhận hiện QR
+                    orderBox.querySelector('#btn-confirm').onclick = function() {
+                        const link = document.getElementById('link-v').value;
+                        const qty = document.getElementById('qty-v').value;
+                        if(!link || qty <= 0) { alert("Anh ơi, nhập đầy đủ Link và Số lượng đã nhé!"); return; }
+
+                        const total = (qty / 1000) * pricePer1k;
+                        document.getElementById('final-total').innerText = total.toLocaleString('vi-VN') + "đ";
+                        document.getElementById('qr-area').style.display = 'block';
+                        this.style.display = 'none';
+                        orderBox.scrollIntoView({ behavior: 'smooth' });
+                    };
+
+                    // Nút báo đã chuyển khoản
+                    orderBox.querySelector('#btn-done').onclick = function() {
+                        const link = document.getElementById('link-v').value;
+                        const qty = document.getElementById('qty-v').value;
+                        const total = document.getElementById('final-total').innerText;
+                        const content = `[ĐƠN HÀNG MỚI]\n──────────────\nDịch vụ: ${name}\nSố lượng: ${qty}\nLink: ${link}\nTổng tiền: ${total}\n──────────────\nTrạng thái: ĐÃ CHUYỂN KHOẢN , TIẾN CHECK GIÚP!`;
+                        
+                        document.getElementById('qr-area').style.display = 'none';
+                        document.getElementById('copy-area').style.display = 'block';
+                        document.getElementById('copy-text').value = content;
+                    };
+
+                    // Nút copy và mở Zalo
+                    orderBox.querySelector('#btn-copy').onclick = function() {
+                        const txt = document.getElementById('copy-text');
+                        txt.select();
+                        document.execCommand('copy');
+                        alert("Đã copy thông tin đơn hàng! Đang mở Zalo của Tiến...");
+                        window.open("https://zalo.me/0966181924", "_blank");
+                    };
+                });
+            });
         }
-        loadSvc();
+    });
+});
+  // Tự động tính tiền khi khách nhập số lượng
+document.addEventListener('input', function (e) {
+    if (e.target.classList.contains('order-qty') || e.target.id === 'qty-v') {
+        const container = e.target.closest('div').parentElement;
+        const qty = parseFloat(e.target.value.replace(/\./g, '')) || 0;
+        const pricePer1k = parseFloat(container.dataset.price) || 0;
+        
+        const total = (qty / 1000) * pricePer1k;
+        
+        const finalTotalElement = container.querySelector('#final-total');
+        if (finalTotalElement) {
+            finalTotalElement.innerText = Math.round(total).toLocaleString('vi-VN') + "đ";
+        }
     }
-}
-
-function loadSvc() {
-    svcS.innerHTML = '';
-    const selectedPlt = pltS.value;
-    const selectedCat = catS.value;
-    if(selectedCat && DB[selectedPlt].cats[selectedCat]) {
-        DB[selectedPlt].cats[selectedCat].svs.forEach(s => {
-            let p20 = Math.round(s.p * 1.2);
-            svcS.innerHTML += `<option value="${p20}" data-d="${s.d}" data-n="${s.n}">${s.n} [${p20}đ]</option>`;
-        });
+});   
+ function confirmOrder(btn) {
+    const container = btn.parentElement;
+    const qtyInput = container.querySelector('input[type="number"]').value;
+    const qty = parseFloat(qtyInput.replace(/\./g, '')) || 0;
+    const pricePer1k = parseFloat(container.dataset.price) || 0;
+    
+    // Công thức tính: (Số lượng / 1000) * giá tiền mỗi 1k đơn vị
+    const total = (qty / 1000) * pricePer1k;
+    
+    if (qty <= 0) {
+        alert("Anh Tiến nhắc khách nhập số lượng đã nhé!");
+        return;
     }
-    showSvc();
-}
 
-function showSvc() {
-    const m = document.getElementById('msg');
-    if(svcS.value) {
-        price = parseInt(svcS.value);
-        m.style.display = 'block';
-        m.innerHTML = `<b>Mô tả Server:</b>\n${svcS.options[svcS.selectedIndex].dataset.d}`;
-    } else { m.style.display = 'none'; price = 0; }
-    calc();
-}
-
-function calc() {
-    let q = document.getElementById('qty').value;
-    document.getElementById('total').innerText = Math.round((q / 1000) * price).toLocaleString();
-}
-
-function pay() {
-    const link = document.getElementById('link').value;
-    if(!link) return alert("Anh Tiến ơi, vui lòng nhập link đơn hàng!");
-    const msg = `ĐƠN HÀNG MỚI:\n- Dịch vụ: ${svcS.options[svcS.selectedIndex].dataset.n}\n- Link: ${link}\n- Số lượng: ${document.getElementById('qty').value}\n- Tổng: ${document.getElementById('total').innerText} VNĐ`;
-    window.open(`https://zalo.me/0966181924?text=${encodeURIComponent(msg)}`);
-}
+    // Hiển thị tiền chính xác
+    const finalTotalElement = container.querySelector('#final-total');
+    if (finalTotalElement) {
+        finalTotalElement.innerText = Math.round(total).toLocaleString('vi-VN') + "đ";
+    }
+    
+    // Hiện mã QR
+    const qrArea = container.querySelector('#qr-area');
+    if (qrArea) qrArea.style.display = 'block';
+    btn.style.display = 'none';
+}   
 </script>
+<style>
+.order-box { animation: fadeIn 0.4s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
 </body>
 </html>
